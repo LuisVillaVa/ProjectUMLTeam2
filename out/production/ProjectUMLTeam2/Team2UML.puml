@@ -1,0 +1,209 @@
+@startuml
+
+class Person {
+  - String name:
+  - String ci:
+  - String birthDate:
+  - int phone:
+  - String address:
+  - char gender:
+
+  +  getName(): String
+  +  getBirthDate(): Date
+  + calculateAge (): int
+   + displayData() : void
+
+
+}
+
+
+class Payment{
+  - float price:
+
+  + display(): void
+  + getPrice() : String
+  + setPrice(): void
+}
+
+
+Class Trip{
+
+  - String destinationCountry:
+  - String destinationCity:
+  - Date startDate:
+  - Date endDate:
+  - String reasonTrip:
+    Payment payment
+    Person person
+    Hotel hotel
+
+  + getDestinationCountry(): String
+  + setDestinationCountry(): void
+  + getDestinationCity():String
+  + setDestinationCity():void
+  + display():void
+  + getReasonTrip():String
+  + setReasonTrip():void
+}
+
+class Main{
+  + static void main()
+}
+class Credit{
+  - int quotas
+ + getQuotas(): float
+ + setQuotas(): void
+ + display(): void
+ + quotasTotal(): void
+
+}
+class Cash {
+
+  +  display() : void
+}
+
+Class Hotel{
+    - String name:
+    - String category:
+    - String emailHotel:
+    - String room:
+    + getName(): String
+    + setName(): void
+    + getCategory(): String
+    + setCategory(): void
+    + getEmailHotel(): String
+    + setEmailHotel():void
+    + getRoom(): String
+    + setRoom(): void
+    + displayHotel(): void
+ }
+
+Class Transport{
+    - String typeTransport:
+    - Double priceTicket:
+    - String timeArrive:
+    - String timeDeparture:
+    + getTypeTransport(): String
+    + getPriceTikect(): Double
+    + getTimeArrive(): String
+    + getTimeDeparture():String
+    + displayData():String
+}
+Class Player
+{
+    - Double height:
+    - int playerNumber:
+    - String positio:
+    - Double weight:
+    - String athleticDiscpline:
+    + getHeight(): Double
+    + getAthleticDiscipline : String
+    + getWeight(): Double
+    + displayData(): String
+}
+Class Swim
+{
+    - String style:
+    - String lane:
+    - String nameCloud:
+    - boolean startSwing:
+    + getStyle(): String
+    + displayData(): String
+    + isStartSwim(): boolean
+}
+Class Cyclist
+{
+    - boolean state:
+    + fixBike(): boolean
+    + displayData(): String
+}
+
+Class Basketball
+{
+    - String nameLeague:
+    - int homeScore:
+    - int awayScore:
+    - int quarter:
+    - String homeTeam:
+    - String awayTeam:
+    - boolean gameStatus:
+    + getHomeTeam: String
+    + getAwayTeam: String
+    + getHomeScore: int
+    + getAwayScore: int
+    + setHomeScore: void
+    + setAwayScore: void
+    + setPeriod: void
+    + getPeriod: int
+    + isSameStatus: boolean
+    + getWinner: String
+
+}
+
+class  Team
+{
+    - String nameTeam:
+    - int numPlayer:
+    -  int playerUp:
+    - int playerDown:
+    + getNameTeam() : String
+    + getNumPlayer() : int
+    + getPlayerUp() : int
+    + getPlayerDown: int
+
+}
+Class TeamPoint
+{
+    - startDate: String
+    - teamId: String
+    - team: String
+    - sportDiscipline: String
+    - teamPoint: int
+    + getStartDate() : int
+    + getTeamId() : int
+    + getTeam() : int
+    + getSportDiscipline(): String
+    + getTeamPoint(): int
+
+}
+Class Tournament
+{
+    - startDate: String
+    - endDate: String
+    - headquarters: String
+    + getStartDate() : String
+    + getEndDate() : String
+    + getHeadQuarters() : String
+
+}
+
+Class Bike
+{
+    - model : String
+    - price : float
+    - hoopNumber : int
+    + getModel () : String
+    + getHoopNumber () : int
+    + setModel () : void
+    + getPrice() : Double
+    + setPrice () : void
+    + displayBycicle () : String
+
+
+}
+Transport --|> Trip
+Cash --|> Payment
+Hotel --> Trip
+Credit --|> Payment
+Person --> Trip
+Trip <-- Payment
+Player --|> Person
+Basketball --|> Player
+Cyclist --|> Player
+Swim --|> Player
+Player o-- Team
+TeamPoint o--  Team
+Tournament --> TeamPoint
+Bike-->  Cyclist
+Bike --> Main
+@enduml

@@ -1,5 +1,5 @@
 public class Trip {
-    Traveler traveler;
+    Person person;
     Payment payment;
     Hotel hotel;
     String destinationCountry;
@@ -8,8 +8,8 @@ public class Trip {
     String endDate;
     String reasonTrip;
 
-    public Trip(Traveler traveler, Payment payment , Hotel hotel , String destinationCountry, String destinationCity, String startDate, String endDate, String reasonTrip ) {
-        this.traveler = traveler;
+    public Trip(Person person, Payment payment , Hotel hotel , String destinationCountry, String destinationCity, String startDate, String endDate, String reasonTrip ) {
+        this.person = person;
         this.payment = payment;
         this.hotel = hotel;
         this.destinationCountry = destinationCountry;
@@ -50,7 +50,7 @@ public class Trip {
                             "\nReason of Trip => " + reasonTrip );
 
         hotel.displayHotel();
-        traveler.displayTraveler();
+        person.displayData();
         payment.display();
 
 
