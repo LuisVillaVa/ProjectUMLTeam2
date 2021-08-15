@@ -1,0 +1,84 @@
+@startuml
+
+class Traveler{
+  - String name;
+  - int age;
+  - int phone;
+
+
+  + void displayTraveler()
+  + String getName()
+  + void setName()
+  + String getAge()
+  + void setAge()
+  + String getPhone()
+  + void setPhone()
+
+}
+class Cash {
+
+  + void display()
+}
+
+class Payment{
+  - float price;
+
+  + void display()
+  + String getPrice()
+  + void setPrice()
+}
+
+Cash --|> Payment
+Class Trip{
+
+  - String destinationCountry;
+  - String destinationCity;
+  - Date startDate;
+  - Date endDate;
+    Payment payment
+    Traveler traveler
+    Hotel hotel
+
+
+  + String getDestinationCountry()
+  + void setDestinationCountry()
+  + String getDestinationCity()
+  + void setDestinationCity()
+  + void display()
+  + String getReasonTrip()
+  + void  setReasonTrip()
+}
+Traveler --> Trip
+Trip <-- Payment
+class Main{
+  + static void main()
+}
+class Credit{
+  - int quotas
+ + float getQuotas()
+ + void setQuotas()
+ + void display()
+ + quotasTotal()
+
+}
+Credit --|> Payment
+Class Hotel{
+    - String name
+    - String category
+    - String emailHotel
+    - String room
+    + String getName()
+    + void setName()
+    + String  getCategory()
+    + void setCategory()
+    + String getEmailHotel()
+    + void setEmailHotel()
+    + String getRoom()
+    + void setRoom()
+    + void displayHotel()
+ }
+ Hotel --> Trip
+
+
+
+@enduml
