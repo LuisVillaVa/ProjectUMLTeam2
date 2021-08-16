@@ -1,6 +1,3 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
 public class Main {
     private static int menuIntialTravel(){
         //add your menu of travel here
