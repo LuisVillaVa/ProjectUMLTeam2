@@ -1,5 +1,7 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class Main {
     private static int menuIntialTravel(){
@@ -9,7 +11,7 @@ public class Main {
 
     private static int menuInitialPlayer() throws Exception{
 
-        System.out.println("\n===========================================\n"+
+        System.out.println("\n============================================\n"+
                 "1. Gets the data of the player Luis"+"\n"+
                 "2. Adds and show list of players"+"\n"+
                 "3. VIew that team going to play"+"\n"+
@@ -21,6 +23,7 @@ public class Main {
                 "0. Finish\n"+
                 "====================================================\n");
         return(ReadKeyBoard.readInt());
+
     }
 
     private static void addPlayer(ListPlayer player) throws Exception{
@@ -46,15 +49,91 @@ public class Main {
         }
     }
 
-    public static void main(String[] arg){
+    public static void main(String[] arg) throws ParseException {
         int option = 0;
         System.out.println("\n==================================================\n"+
-                "1. Travel"+"\n"+
-                "2. Player"+"\n");
+                            "1. Travel"+"\n"+
+                            "2. Player"+"\n"+
+                            "==================================================\n");
         int chooseMenu = ReadKeyBoard.readInt();
         if(chooseMenu==1){
-            //call the method of the menu travel
-            //Add your code of main here.
+
+
+
+               // Scanner readKeyBoard = new Scanner(System.in);
+
+                System.out.println("Datas of the Person : " +"\n======================="+"\nPlease, Enter name ");
+                String name = ReadKeyBoard.readChain();
+                System.out.println("Please, Enter address");
+                String address = ReadKeyBoard.readChain();
+                System.out.println("Please, Enter birthday  with Format 'dd/MM/YYYY'");
+                String birthday = ReadKeyBoard.readChain();
+
+                Person person = new Person(name,  address );
+
+
+                Trip trip = new Trip();
+                SimpleDateFormat obj = new SimpleDateFormat("dd/MM/yyyy");
+                Date dateStart = obj.parse("09/08/2021");
+                Date dateEnd = obj.parse("18/09/2021");
+                trip.setStartDate(dateStart);
+                trip.setEndDate(dateEnd);
+                System.out.println("Data of Destination: " +"\n======================="+"\nPlease, Enter Country destination ");
+                String destination = ReadKeyBoard.readChain();
+                System.out.println("Please, enter City destination");
+                String destCity = ReadKeyBoard.readChain();
+                System.out.println("Reason of Travel ");
+                String reason = ReadKeyBoard.readChain();
+
+                trip.setDestinationCountry(destination);
+                trip.setDestinationCity(destCity);
+                trip.setReasonTrip(reason);
+
+                Hotel hotelTrip= new Hotel();
+                System.out.println("Data of the Hotel: " +"\n======================="+"\nPlease, Enter Hotel name ");
+                String hotelname = ReadKeyBoard.readChain();
+                System.out.println("Please, Enter Hotel Category ");
+                int hotelcategori = ReadKeyBoard.readInt();
+                hotelTrip.setName(hotelname);
+                hotelTrip.setCategory(hotelcategori);
+                hotelTrip.getEmailHotel();
+
+                System.out.println("Price of Travel  : " +"\n======================="+"\nPlease, Enter Price of travel ");
+                float price = ReadKeyBoard.readFloat();
+
+
+                       System.out.println("\n=======================\n"+
+                                            "1. Credit"+"\n"+
+                                            "2. Cash " +"\n"+
+                                            "=======================\n");
+                       int chooseMenu1 = ReadKeyBoard.readInt();
+                            if (chooseMenu1==1){
+                                System.out.println("Please, Enter the number of quotas  ");
+                                int quotas = ReadKeyBoard.readInt();
+                                Credit tripPaymentCredit = new Credit(0f, 0);
+                                tripPaymentCredit.setPrice(price);
+                                tripPaymentCredit.setQuotas(quotas);
+                                tripPaymentCredit.display();
+                            }
+                            else if (chooseMenu1==2){
+                                System.out.println("Please, Enter discount percentage  ");
+                                float desc = ReadKeyBoard.readFloat();
+                                Cash tripPaymentCash = new Cash(0f);
+                                tripPaymentCash.setPrice(price);
+                                tripPaymentCash.setDesc(desc);
+                                tripPaymentCash.display();
+                            }
+                            else
+                            {
+                            System.out.println("Enter value 1 or 2");
+                            }
+
+
+                System.out.println(person.displayData());
+                person.calculateAge(birthday);
+                trip.displayTrip();
+                hotelTrip.displayHotel();
+
         }
         else if (chooseMenu==2) {
             do {

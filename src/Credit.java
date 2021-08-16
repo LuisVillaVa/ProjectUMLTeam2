@@ -15,7 +15,16 @@ public class Credit extends Payment {
     }
 
     public float  quotasTotal() {
-         float total = price / quotas;
+        float total;
+        if (quotas==0){
+
+            total = price ;
+        }
+        else
+        {
+            total = price / quotas;
+        }
+
          return total;
     }
 

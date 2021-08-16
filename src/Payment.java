@@ -16,4 +16,6 @@ public class Payment {
     public void display(){
         System.out.println(price);
     }
+
+
 }

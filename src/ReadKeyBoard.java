@@ -53,4 +53,13 @@ public class ReadKeyBoard {
         }
         return bol;
     }
+    public static float readFloat() {
+        float num = 0;
+        try {
+            num = Float.parseFloat( readChain().trim() );
+        } catch( Exception e ) {
+            System.out.println(e.getMessage());
+        }
+        return num;
+    }
 }

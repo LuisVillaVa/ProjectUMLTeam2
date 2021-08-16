@@ -1,17 +1,19 @@
+import java.util.Date;
+
 public class Trip {
-    Person person;
-    Payment payment;
-    Hotel hotel;
+
     String destinationCountry;
     String destinationCity;
-    String startDate;
-    String endDate;
+    Date startDate;
+    Date endDate;
     String reasonTrip;
 
-    public Trip(Person person, Payment payment , Hotel hotel , String destinationCountry, String destinationCity, String startDate, String endDate, String reasonTrip ) {
-        this.person = person;
-        this.payment = payment;
-        this.hotel = hotel;
+
+    public  Trip(){
+
+    }
+    public Trip( String destinationCountry, String destinationCity, Date startDate, Date endDate, String reasonTrip ) {
+
         this.destinationCountry = destinationCountry;
         this.destinationCity = destinationCity;
         this.startDate = startDate;
@@ -41,17 +43,29 @@ public class Trip {
     public void setReasonTrip( String reasonTrip) {
         this.reasonTrip = reasonTrip;
     }
+    public Date getStartDate() {
+        return startDate;
+    }
 
-    public void  display() {
-        System.out.println( "Destination Country  is => " + destinationCountry +
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public void  displayTrip() {
+        System.out.println("-----------------------\n"+ "*  TRIP *\n "+ "-----------------------\n"+
+                            "Destination Country  is => " + destinationCountry +
                             "\nDestination City  is => " + destinationCity +
                             "\nStart Date => " + startDate +
                             "\nEnd Date => " + endDate +
                             "\nReason of Trip => " + reasonTrip );
-
-        hotel.displayHotel();
-        person.displayData();
-        payment.display();
 
 
     }
