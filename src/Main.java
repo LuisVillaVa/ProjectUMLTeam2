@@ -1,7 +1,8 @@
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.*;
 
 
 public class Main {
@@ -9,24 +10,22 @@ public class Main {
     private static int menuInitialPlayer() throws Exception{
 
         System.out.println("\n============================================\n"+
-                "1. Adds and show list of players"+"\n"+
-                "2. View the teams basketball going to play"+"\n"+
-                "3. Gets winner team of the play of basketball"+"\n"+
-                "4. Add a cyclist"+"\n"+
-                "5. Add a swimmer"+"\n"+
-                "6. Style"+"\n"+
-                "7. Show if the swimming competition started "+"\n"+
+                "1. Define a day for the tournament"+"\n"+
+                "2. Adds basketball player"+"\n"+
+                "3. Add cyclist player"+"\n"+
+                "4. Add swimmer player"+"\n"+
+                "5. Include a team"+"\n"+
+                "6. Show if the swimming competition started "+"\n"+
                 "0. Finish\n"+
                 "====================================================\n");
         return(ReadKeyBoard.readInt());
 
     }
 
-    private static void addPlayer(ListPlayer player) throws Exception{
+    private static void addPlayer(ListPlayer player, String discipline) throws Exception{
         boolean morePlayer = true;
         String firstName;
         String lastName;
-        String discipline;
         double height;
         double weight;
 
@@ -35,21 +34,30 @@ public class Main {
             firstName = ReadKeyBoard.readChain();
             System.out.println("Enter last name: ");
             lastName = ReadKeyBoard.readChain();
-            System.out.println("Enter discipline: ");
-            discipline = ReadKeyBoard.readChain();
             System.out.println("Enter height: ");
             height = ReadKeyBoard.readDouble();
             System.out.println("Enter weight");
             weight = ReadKeyBoard.readDouble();
-            player.addPlayer(new Player(firstName, lastName, discipline, height, weight));
+            if(discipline=="Swimming"){
+                System.out.println("Enter the style of the swimmer: ");
+                String style = ReadKeyBoard.readChain();
+                player.addSwim(new Swim(firstName, lastName, discipline, height, weight, style));
+            }else{
+                player.addPlayer(new Player(firstName, lastName, discipline, height, weight));
+            }
             System.out.println("Add more players");
             System.out.println("If your want to add more players enter 'true' otherwise enter 'false'");
             morePlayer = ReadKeyBoard.readBoolean();
         }
     }
 
+
     public static void main(String[] arg) throws ParseException {
         int option = 0;
+        Map<String,Team> teams = new HashMap<String,Team>();
+        String discipline;
+        String nameTeam;
+        String nameCoach;
         System.out.println("\n==================================================\n"+
                             "1. Travel"+"\n"+
                             "2. Player"+"\n"+
@@ -143,24 +151,44 @@ public class Main {
                     ListPlayer player = new ListPlayer();
                     switch (option) {
                         case 1:
+                            GregorianCalendar aux = new GregorianCalendar();
+                            System.out.println("how many days is the day celebrated?");
+                            int days = ReadKeyBoard.readInt();
 
-                            addPlayer(player);
-                            System.out.println(" *  PLAYERS  *");
-                            player.displayPlayer();
+                            while (days<1 || days>3){
+                                System.out.print("Minimum One, Maximum 3 :)\n");
+                                days = ReadKeyBoard.readInt();
+                            }
+                            List<String> listaDeFechas = new ArrayList<>();
+
+                            for(int i=0;i<days; i++){
+                                System.out.print("Date " + (i+1) + " :\n");
+                                System.out.print("Indicate the day \n");
+                                int day = ReadKeyBoard.readInt();
+                                System.out.print("Indicate the month \n");
+                                int month = ReadKeyBoard.readInt();
+                                System.out.print("Indicate the year \n");
+                                int year = ReadKeyBoard.readInt();
+                                listaDeFechas.add(day+"/"+month+"/"+year);
+                            }
+                            System.out.println("Enter the Headquarter:");
+                            String  headquarter = ReadKeyBoard.readChain();
+                            String startDate = listaDeFechas.get(0);
+                            String endDate = listaDeFechas.get(listaDeFechas.size()-1);
+                            Tournament tournament = new Tournament(startDate, endDate, headquarter);
+                            System.out.println(tournament.displayDataTournament());
                             break;
                         case 2:
-                            System.out.println("");
-                            Basketball basketball = new Basketball("Team Dragon", "Team SiquiMira", 5, 8);
-                            System.out.println(basketball.getHomeTeam() + " vs " + basketball.getAwayTeam());
+                            discipline = "Basketball";
+                            addPlayer(player, discipline);
+                            System.out.println(" *  BASKETBALL PLAYERS  *");
+                            player.displayPlayer();
                             break;
                         case 3:
-                            Basketball basketballResult = new Basketball("Team Dragon", "Team SiquiMira", 5, 8);
-                            System.out.println("Team winner is: " + basketballResult.getWinner());
-                            break;
-                        case 4:
+                            discipline = "Cyclist";
                             System.out.println("=============================");
                             System.out.println("Enter a Cyclist");
-                            addPlayer(player);
+                            addPlayer(player, discipline);
                             System.out.println("=============================");
                             System.out.println("Enter data of the bicycle");
                             System.out.println("Model of the bicycle: ");
@@ -169,31 +197,39 @@ public class Main {
                             int hoopNumber = ReadKeyBoard.readInt();
                             System.out.println("=============================");
 
-                            System.out.println("Data of the Cyclist");
+                            System.out.println("*  CYCLIST PLAYERS  *");
                             player.displayPlayer();
                             System.out.println("=============================");
                             System.out.println("Data of the Bicycle");
                             Bike bike = new Bike(model, hoopNumber);
                             System.out.println(bike.displayBicycle());
                             break;
-                        case 5:
+                        case 4:
+                            discipline = "Swimming";
                             System.out.println("=============================");
                             System.out.println("Enter a Swimmer");
-                            addPlayer(player);
-                            System.out.println("Dominating style");
-                            String style = ReadKeyBoard.readChain();
+                            addPlayer(player, discipline);
                             System.out.println("=============================");
 
-                            System.out.println("Data of the Swimmer");
-                            player.displayPlayer();
-                            Swim swim = new Swim(style);
-                            System.out.println(swim.displayData());
+                            System.out.println("*  SWIMMER PLAYERS  *");
+                            player.displaySwim();
+                            break;
+                        case 5:
+                            System.out.print("Enter name of Team:  ");
+                            nameTeam = ReadKeyBoard.readChain();
+                            System.out.print("Enter name of the coach:  ");
+                            nameCoach = ReadKeyBoard.readChain();
+                            boolean existTeam = teams.containsKey(nameTeam);
+                            if (existTeam) {
+                                System.out.println("There is already a club with that name");
+                            }else{
+                                Team team = new Team(nameTeam, nameCoach);
+                                teams.put(nameTeam, team);
+                                System.out.println("The team has been added to tournament");
+                            }
+
                             break;
                         case 6:
-                            Swim swimStyle = new Swim("Backstroke");
-                            System.out.println("The type of swimming style is: " + swimStyle.getStyle());
-                            break;
-                        case 7:
                             Swim swimBegin = new Swim(false);
                             System.out.println(swimBegin.startSwim());
                             break;

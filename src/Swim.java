@@ -35,6 +35,12 @@ public class Swim extends Player{
 
     @Override
     public String displayData(){
-        return "Style: "+getStyle();
+        return "\n=======================\n"+
+                "First Name: "+ getFirstName() +"\n"+
+                "Last Name: " + getLastName() +"\n"+
+                "Discipline: "+ getAthleticDiscipline() +"\n"+
+                "Height: "+ getHeight()+"\n"+
+                "Weight: "+ getWeight() +"\n"+
+                "Style: "+ getStyle() +"\n";
     }
 }
