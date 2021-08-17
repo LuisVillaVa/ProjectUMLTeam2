@@ -1,11 +1,9 @@
-<<<<<<< HEAD
-=======
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
->>>>>>> 1482e52849c18ee7c01d46885fd0e4fac12c2d42
 public class Main {
     private static int menuIntialTravel(){
         //add your menu of travel here

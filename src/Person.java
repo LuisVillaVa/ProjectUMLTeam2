@@ -55,7 +55,7 @@ public class Person {
         LocalDate nowAge = LocalDate.now();
 
         Period period = Period.between(birth, nowAge);
-        System.out.printf("You age is: %s years, %s months and %s days\n " ,
+        System.out.printf("You age is: %s years " ,
                 period.getYears());
 
     }
