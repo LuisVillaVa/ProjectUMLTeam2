@@ -1,6 +1,7 @@
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 
@@ -136,19 +137,21 @@ public class Main {
                 hotelTrip.displayHotel();
 
                 Transport transport = new Transport();
-                    System.out.println( "Data of the Transport: " + "\n==============="+"\nEnter the type of transport that you going to travel : ");
+                    System.out.println( "Data of the Transport: " + "\n==============="+"\nEnter the type of transport that you are going to travel : ");
                     String typeTransport = ReadKeyBoard.readChain();
                     System.out.println("Enter the price of ticket");
                     float priceTicket = ReadKeyBoard.readFloat();
                     System.out.println("Enter the Date Time to arrive ");
-                    String timeArrive = ReadKeyBoard.readChain();
-                    System.out.println("Enter the Date Time to departure ");
-                    String timeDeparture = ReadKeyBoard.readChain();
                     transport.setTypeTransport(typeTransport);
                     transport.setPriceTicket(priceTicket);
+                    SimpleDateFormat objTime = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
+                    Date timeArrive =  objTime.parse("16/09/2021 10:43:00");
                     transport.setTimeArrive(timeArrive);
+                    Date timeDeparture = objTime.parse ("16/09/2021 11:43:00");
                     transport.setTimeDeparture(timeDeparture);
                     transport.displayTransport();
+
 
 
         }
