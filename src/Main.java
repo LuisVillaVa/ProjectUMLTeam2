@@ -1,10 +1,10 @@
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
 public class Main {
+
     private static int menuIntialTravel(){
         //add your menu of travel here
         return 0;
@@ -50,7 +50,24 @@ public class Main {
         }
     }
 
-    public static void main(String[] arg) throws ParseException {
+    private static void addPerson() {
+            
+            System.out.println("Datas of the Person : " +"\n======================="+"\nPlease, Enter name ");
+            String name = ReadKeyBoard.readChain();
+            Person person = new Person(name);
+            
+
+
+
+          //  System.out.println("Please, Enter address");
+         //   String address = ReadKeyBoard.readChain();
+           // System.out.println("Please, Enter birthday  with Format 'dd/MM/YYYY'");
+            //String birthday = ReadKeyBoard.readChain();
+
+        }
+
+    public static void main(String[] arg) throws Exception {
+
         int option = 0;
         System.out.println("\n==================================================\n"+
                             "1. Travel"+"\n"+
@@ -59,21 +76,22 @@ public class Main {
         int chooseMenu = ReadKeyBoard.readInt();
         if(chooseMenu==1){
 
+          //  Person person = null;
+            addPerson();
+             Person person = new Person();
 
 
-               // Scanner readKeyBoard = new Scanner(System.in);
 
-                System.out.println("Datas of the Person : " +"\n======================="+"\nPlease, Enter name ");
+              /*  System.out.println("Datas of the Person : " +"\n======================="+"\nPlease, Enter name ");
                 String name = ReadKeyBoard.readChain();
                 System.out.println("Please, Enter address");
                 String address = ReadKeyBoard.readChain();
                 System.out.println("Please, Enter birthday  with Format 'dd/MM/YYYY'");
                 String birthday = ReadKeyBoard.readChain();
 
-                Person person = new Person(name,  address );
+                Person person = new Person(name,  address );*/
 
-
-                Trip trip = new Trip();
+               /* Trip trip = new Trip();
                 SimpleDateFormat obj = new SimpleDateFormat("dd/MM/yyyy");
                 Date dateStart = obj.parse("09/08/2021");
                 Date dateEnd = obj.parse("18/09/2021");
@@ -130,10 +148,10 @@ public class Main {
                             }
 
 
-                System.out.println(person.displayData());
-                person.calculateAge(birthday);
+              // System.out.println(person.displayData());
+               //person.calculateAge(birthday);
                 trip.displayTrip();
-                hotelTrip.displayHotel();
+                hotelTrip.displayHotel();*/
 
         }
         else if (chooseMenu==2) {
@@ -190,4 +208,6 @@ public class Main {
             System.out.println("Enter value 1 or 2");
         }
     }
+
+
 }

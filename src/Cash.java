@@ -3,7 +3,6 @@ public class Cash extends  Payment {
 
     float desc;
     float  descuento  ;
-    //float total;
 
     public Cash(float price) {
         super(price);
@@ -19,7 +18,6 @@ public class Cash extends  Payment {
 
      public float descu(){
         return descuento = (price * desc)/100;
-       // return  total = price - descuento;
      }
 
     @Override

@@ -62,5 +62,7 @@ public class Person {
 
     public String displayData(){
         return "Name is: " + getName() + " and my address is: "+ getAddress() ;
+
     }
+
 }
