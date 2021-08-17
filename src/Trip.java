@@ -8,8 +8,6 @@ public class Trip {
     Date endDate;
     String reasonTrip;
     float totalPrice = 0;
-    Transport transport;
-    Hotel hotel;
 
     public  Trip(){
 
@@ -21,7 +19,6 @@ public class Trip {
         this.startDate = startDate;
         this.endDate = endDate;
         this.reasonTrip = reasonTrip;
-        this.totalPrice = transport.getPriceTicket()+hotel.getPriceHotel();
     }
 
     public String getDestinationCountry() {
@@ -61,9 +58,8 @@ public class Trip {
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
-
-    public float getTotalPrice() {
-        return totalPrice;
+    public float getTotalPrice(float priceTicket, float priceHotel) {
+        return priceTicket+priceHotel;
     }
 
     public void  displayTrip() {

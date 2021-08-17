@@ -6,8 +6,9 @@ import java.util.Map;
 
 public class MenuTravelUML {
     String birthday;
+    float hotelPrice;
+    float priceTicket;
 
-    Map<String,Team> teams = new HashMap<String,Team>();
     SimpleDateFormat obj = new SimpleDateFormat("dd/MM/yyyy");
 
     Person person;
@@ -54,7 +55,7 @@ public class MenuTravelUML {
         System.out.println("Please, Enter Hotel Category ");
         int hotelcategori = ReadKeyBoard.readInt();
         System.out.println("Please, Enter price ");
-        float hotelPrice = ReadKeyBoard.readFloat();
+        hotelPrice = ReadKeyBoard.readFloat();
         hotelTrip.setName(hotelname);
         hotelTrip.setCategory(hotelcategori);
         hotelTrip.setPriceHotel(hotelPrice);
@@ -63,7 +64,7 @@ public class MenuTravelUML {
 
     public void chooseTypePayment(){
         System.out.println("Price of Travel  : " +"\n======================="+"\n");
-        float price = trip.getTotalPrice();
+        float price = trip.getTotalPrice(priceTicket, hotelPrice);
 
         System.out.println("\n=======================\n"+
                 "1. Credit"+"\n"+
@@ -95,7 +96,7 @@ public class MenuTravelUML {
         System.out.println( "Data of the Transport: " + "\n==============="+"\nEnter the type of transport that you are going to travel : ");
         String typeTransport = ReadKeyBoard.readChain();
         System.out.println("Enter the price of ticket");
-        float priceTicket = ReadKeyBoard.readFloat();
+        priceTicket = ReadKeyBoard.readFloat();
         System.out.println("Enter the Date Time to arrive int he follow format 'dd/mm/YY HH:mm:ss'");
         String arriveDate = ReadKeyBoard.readChain();
         System.out.println("Enter the Date Time to departure int he follow format 'dd/mm/YY HH:mm:ss'");
