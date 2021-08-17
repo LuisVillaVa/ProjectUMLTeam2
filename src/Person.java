@@ -3,7 +3,8 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 public class Person {
-    String name;
+    String firstName;
+    String lastName;
     String ci;
     String birthDate;
     int phone;
@@ -12,17 +13,19 @@ public class Person {
 
     public Person(){};
 
-    public Person(String name){
-        this.name = name;
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
-    public Person(String name, String address) {
-        this.name = name;
+    public Person(String firstName, String lastName, String address){
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.address = address;
     }
 
-    public Person(String name, String ci, String birthDate, int phone, String address, char gender) {
-        this.name = name;
+    public Person(String firstName, String ci, String birthDate, int phone, String address, char gender) {
+        this.firstName = firstName;
         this.ci = ci;
         this.birthDate = birthDate;
         this.phone = phone;
@@ -30,17 +33,20 @@ public class Person {
         this.gender = gender;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
+    public String getLastName() {
+        return lastName;
+    }
 
     public String getBirthDate() {
         return birthDate;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
     public void setAddress(String address) {
         this.address = address;
@@ -61,6 +67,9 @@ public class Person {
     }
 
     public String displayData(){
-        return "Name is: " + getName() + " and my address is: "+ getAddress() ;
+        return "-----------------------\n * PERSON * \n-----------------------\n"+
+                "First Name: " + getFirstName() +"\n"+
+                "Last Name: " + getLastName() +"\n"+
+                "Address: "+ getAddress();
     }
 }
