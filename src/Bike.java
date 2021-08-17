@@ -31,6 +31,9 @@ public class Bike {
     }
 
     public String displayBicycle(){
-        return "The Model of the bicycle is: "+getModel()+" this has a price of: "+getPrice()+" and has a hoop number of: "+getHoopNumber();
+        return "=======================\n"+
+                "Model: " + getModel() +"\n"+
+                "Hoop Number: "+ getHoopNumber() +"\n"+
+                "======================\n";
     }
 }
