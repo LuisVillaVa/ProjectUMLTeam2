@@ -135,6 +135,22 @@ public class Main {
                 trip.displayTrip();
                 hotelTrip.displayHotel();
 
+                Transport transport = new Transport();
+                    System.out.println( "Data of the Transport: " + "\n==============="+"\nEnter the type of transport that you going to travel : ");
+                    String typeTransport = ReadKeyBoard.readChain();
+                    System.out.println("Enter the price of ticket");
+                    float priceTicket = ReadKeyBoard.readFloat();
+                    System.out.println("Enter the Date Time to arrive ");
+                    String timeArrive = ReadKeyBoard.readChain();
+                    System.out.println("Enter the Date Time to departure ");
+                    String timeDeparture = ReadKeyBoard.readChain();
+                    transport.setTypeTransport(typeTransport);
+                    transport.setPriceTicket(priceTicket);
+                    transport.setTimeArrive(timeArrive);
+                    transport.setTimeDeparture(timeDeparture);
+                    transport.displayTransport();
+
+
         }
         else if (chooseMenu==2) {
             do {

@@ -2,12 +2,12 @@ import java.util.Date;
 
 public class Transport extends Trip {
     String typeTransport;
-    double priceTicket;
+    float priceTicket;
     String timeArrive;
     String timeDeparture;
 
     public Transport(){}
-    public Transport(String destinationCountry, String destinationCity, Date startDate, Date endDate, String reasonTrip, String typeTransport, double priceTicket, String timeArrive, String timeDeparture) {
+    public Transport(String destinationCountry, String destinationCity, Date startDate, Date endDate, String reasonTrip, String typeTransport, float priceTicket, String timeArrive, String timeDeparture) {
         super(destinationCountry, destinationCity, startDate, endDate, reasonTrip);
         this.typeTransport = typeTransport;
         this.priceTicket = priceTicket;
@@ -19,7 +19,7 @@ public class Transport extends Trip {
         return typeTransport;
     }
 
-    public double getPriceTicket() {
+    public float getPriceTicket() {
         return priceTicket;
     }
 
@@ -30,7 +30,24 @@ public class Transport extends Trip {
     public String getTimeDeparture() {
         return timeDeparture;
     }
-    public void displayTransport(){
+
+    public void setTypeTransport(String typeTransport) {
+        this.typeTransport = typeTransport;
+    }
+
+    public void setPriceTicket(float priceTicket) {
+        this.priceTicket = priceTicket;
+    }
+
+    public void setTimeArrive(String timeArrive) {
+        this.timeArrive = timeArrive;
+    }
+
+    public void setTimeDeparture(String timeDeparture) {
+        this.timeDeparture = timeDeparture;
+    }
+
+    public void  displayTransport(){
         System.out.println("-------------------\n"+ "* TRANSPORT*\n "+ "----------------\n"+
                             "Type of Transport is => " + typeTransport +
                             "\nPrice of Ticket is => " + priceTicket +
