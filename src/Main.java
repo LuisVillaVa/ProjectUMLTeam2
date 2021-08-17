@@ -1,5 +1,4 @@
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -54,95 +53,29 @@ public class Main {
 
     public static void main(String[] arg) throws ParseException {
         int option = 0;
-        Map<String,Team> teams = new HashMap<String,Team>();
+        MenuTravelUML menu = new MenuTravelUML();
         String discipline;
         String nameTeam;
         String nameCoach;
+        Map<String,Team> teams = new HashMap<String,Team>();
+        SimpleDateFormat obj = new SimpleDateFormat("dd/MM/yyyy");
+
         System.out.println("\n==================================================\n"+
                             "1. Travel"+"\n"+
                             "2. Player"+"\n"+
                             "==================================================\n");
         int chooseMenu = ReadKeyBoard.readInt();
         if(chooseMenu==1){
-
-
-
-               // Scanner readKeyBoard = new Scanner(System.in);
-
-                System.out.println("Datas of the Person : " +"\n======================="+"\nPlease, Enter first name ");
-                String firstName = ReadKeyBoard.readChain();
-                System.out.println("Please, Enter last name");
-                String lastName = ReadKeyBoard.readChain();
-                System.out.println("Please, Enter address");
-                String address = ReadKeyBoard.readChain();
-                System.out.println("Please, Enter birthday  with Format 'dd/MM/YYYY'");
-                String birthday = ReadKeyBoard.readChain();
-
-                Person person = new Person(firstName, lastName, address );
-
-
-                Trip trip = new Trip();
-                SimpleDateFormat obj = new SimpleDateFormat("dd/MM/yyyy");
-                Date dateStart = obj.parse("09/08/2021");
-                Date dateEnd = obj.parse("18/09/2021");
-                trip.setStartDate(dateStart);
-                trip.setEndDate(dateEnd);
-                System.out.println("Data of Destination: " +"\n======================="+"\nPlease, Enter Country destination ");
-                String destination = ReadKeyBoard.readChain();
-                System.out.println("Please, enter City destination");
-                String destCity = ReadKeyBoard.readChain();
-                System.out.println("Reason of Travel ");
-                String reason = ReadKeyBoard.readChain();
-
-                trip.setDestinationCountry(destination);
-                trip.setDestinationCity(destCity);
-                trip.setReasonTrip(reason);
-
-                Hotel hotelTrip= new Hotel();
-                System.out.println("Data of the Hotel: " +"\n======================="+"\nPlease, Enter Hotel name ");
-                String hotelname = ReadKeyBoard.readChain();
-                System.out.println("Please, Enter Hotel Category ");
-                int hotelcategori = ReadKeyBoard.readInt();
-                hotelTrip.setName(hotelname);
-                hotelTrip.setCategory(hotelcategori);
-                hotelTrip.getEmailHotel();
-
-                System.out.println("Price of Travel  : " +"\n======================="+"\nPlease, Enter Price of travel ");
-                float price = ReadKeyBoard.readFloat();
-
-
-                       System.out.println("\n=======================\n"+
-                                            "1. Credit"+"\n"+
-                                            "2. Cash " +"\n"+
-                                            "=======================\n");
-                       int chooseMenu1 = ReadKeyBoard.readInt();
-                            if (chooseMenu1==1){
-                                System.out.println("Please, Enter the number of quotas  ");
-                                int quotas = ReadKeyBoard.readInt();
-                                Credit tripPaymentCredit = new Credit(0f, 0);
-                                tripPaymentCredit.setPrice(price);
-                                tripPaymentCredit.setQuotas(quotas);
-                                tripPaymentCredit.display();
-                            }
-                            else if (chooseMenu1==2){
-                                System.out.println("Please, Enter discount percentage  ");
-                                float desc = ReadKeyBoard.readFloat();
-                                Cash tripPaymentCash = new Cash(0f);
-                                tripPaymentCash.setPrice(price);
-                                tripPaymentCash.setDesc(desc);
-                                tripPaymentCash.display();
-                            }
-                            else
-                            {
-                            System.out.println("Enter value 1 or 2");
-                            }
-
-
-                System.out.println(person.displayData());
-                person.calculateAge(birthday);
-                trip.displayTrip();
-                hotelTrip.displayHotel();
-
+                menu.addPerson();
+                menu.addHotel();
+                menu.addTransport();
+                menu.addTravel();
+                menu.chooseTypePayment();
+                System.out.print(menu.displayPerson());
+                menu.getAgePerson();
+                menu.displayTravel();
+                menu.displayHotel();
+                menu.displayTransport();
         }
         else if (chooseMenu==2) {
             do {
@@ -173,8 +106,8 @@ public class Main {
                             }
                             System.out.println("Enter the Headquarter:");
                             String  headquarter = ReadKeyBoard.readChain();
-                            String startDate = listaDeFechas.get(0);
-                            String endDate = listaDeFechas.get(listaDeFechas.size()-1);
+                            String startDate = obj.parse(listaDeFechas.get(0)).toString();
+                            String endDate = obj.parse(listaDeFechas.get(listaDeFechas.size()-1)).toString();
                             Tournament tournament = new Tournament(startDate, endDate, headquarter);
                             System.out.println(tournament.displayDataTournament());
                             break;
