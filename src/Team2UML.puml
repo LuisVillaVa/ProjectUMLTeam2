@@ -16,7 +16,6 @@ class Person {
 
 }
 
-
 class Payment{
   - float price:
 
@@ -103,7 +102,7 @@ Class Player
 }
 Class Swim
 {
-    - String style:
+    - String styleSwim:
     - String lane:
     - String nameCloud:
     - boolean startSwing:
@@ -113,7 +112,7 @@ Class Swim
 }
 Class Cyclist
 {
-    - boolean state:
+    - boolean Bike:
     + fixBike(): boolean
     + displayData(): String
 }
