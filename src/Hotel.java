@@ -4,12 +4,14 @@ public class Hotel {
     int category;
     String emailHotel;
     String room;
+    float priceHotel;
     public  Hotel(){}
-    public Hotel(String name, int category, String emailHotel, String room) {
+    public Hotel(String name, int category, String emailHotel, String room, float priceHotel) {
         this.name = name;
         this.category = category;
         this.emailHotel = emailHotel;
         this.room = room;
+        this.priceHotel = priceHotel;
     }
 
     public String getName() {
@@ -44,7 +46,13 @@ public class Hotel {
         this.room = room;
     }
 
+    public float getPriceHotel() {
+        return priceHotel;
+    }
 
+    public void setPriceHotel(float priceHotel) {
+        this.priceHotel = priceHotel;
+    }
 
     public void displayHotel() {
         System.out.println( "-----------------------\n" + "*  HOTEL *" + "\n-----------------------"+

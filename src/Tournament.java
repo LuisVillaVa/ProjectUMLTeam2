@@ -1,14 +1,14 @@
 public class Tournament {
     private String startDate;
     private String endDate;
-    private String headquearters;
+    private String headquarters;
 
     public Tournament(){}
 
-    public Tournament(String startDate, String endDate, String headquearters) {
+    public Tournament(String startDate, String endDate, String headquarters) {
         this.startDate = startDate;
         this.endDate = endDate;
-        this.headquearters = headquearters;
+        this.headquarters = headquarters;
     }
 
     public String getStartDate() {
@@ -19,7 +19,14 @@ public class Tournament {
         return endDate;
     }
 
-    public String getHeadquearters() {
-        return headquearters;
+    public String getHeadquarters() {
+        return headquarters;
+    }
+
+    public String displayDataTournament(){
+        return "-----------------------\n * The tournament has been defined correctly * \n-----------------------\n"+
+                "Start Date: " + getStartDate() +"\n"+
+                "End Date: " + getEndDate() +"\n"+
+                "Headquarter: "+ getHeadquarters();
     }
 }
