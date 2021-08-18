@@ -48,6 +48,7 @@ public class Person {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
+
     public void setAddress(String address) {
         this.address = address;
     }
@@ -55,6 +56,7 @@ public class Person {
     public String getAddress() {
         return address;
     }
+
     void calculateAge(String birthDate){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate birth = LocalDate.parse(birthDate, formatter);
@@ -72,4 +74,5 @@ public class Person {
                 "Last Name: " + getLastName() +"\n"+
                 "Address: "+ getAddress();
     }
+
 }

@@ -31,4 +31,6 @@ public class Main {
             System.out.println("Enter value 1 or 2");
         }
     }
+
+
 }

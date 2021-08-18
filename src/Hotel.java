@@ -32,13 +32,13 @@ public class Hotel {
     }
 
     public String getEmailHotel() {
-        return emailHotel = "barcelo_Bavaro@gamil.com";
+        return emailHotel ;
     }
 
     public void setEmailHotel(String emailHotel) {
         this.emailHotel = emailHotel;
-
     }
+
     public String getRoom() {
         return room ;
     }
@@ -60,6 +60,7 @@ public class Hotel {
                             "\nName Hotel  is: " + name +
                             "\nCategory is:  " + category + " Stars"+
                             "\nEmail is: "+ emailHotel +
+                            "\nRoom is: "+ room +
                             "\nPrice  is: "+ getPriceHotel());
     }
 }

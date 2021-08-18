@@ -1,31 +1,30 @@
 public class Cash extends  Payment {
-    private float desc;
-    private float  descuento  ;
+    private float discountPorc;
+    private float  discount ;
     //float total;
 
     public Cash(float price) {
         super(price);
     }
 
-    public float getDesc() {
-        return desc;
+    public float getDiscountPorc() {
+        return discountPorc;
     }
 
-    public void setDesc(float desc) {
-        this.desc = desc;
+    public void setDiscountPorc(float desc) {
+        this.discountPorc = desc;
     }
 
-     public float descu(){
-        return descuento = (price * desc)/100;
-       // return  total = price - descuento;
+     public float discount(){
+        return discount = (price * discountPorc)/100;
      }
 
     @Override
     public void display() {
         System.out.println("*  CASH  *");
         System.out.println("The Price is: "+ price);
-        System.out.println("Discount is :"+ descu() + "$ =>" + desc + "%");
-        System.out.println("Cash total amount is: " +  (price - descuento) + "  $ Dollar of discount  ");
+        System.out.println("Discount is :"+ discount() + "$ => " + discountPorc + "%");
+        System.out.println("Cash total amount is: " +  (price - discount) + "  $ Dollar of discount  ");
     }
 
 

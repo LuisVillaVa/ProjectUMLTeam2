@@ -3,7 +3,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MenuTravelUML {
-    private String birthday;
+    private String birthdate;
     private float hotelPrice;
     private float priceTicket;
 
@@ -23,17 +23,16 @@ public class MenuTravelUML {
         String lastName = ReadKeyBoard.readChain();
         System.out.println("Please, Enter address");
         String address = ReadKeyBoard.readChain();
-        System.out.println("Please, Enter birthday  with Format 'dd/MM/YYYY'");
-        birthday = ReadKeyBoard.readChain();
-
+        System.out.println("Please, Enter Date of birth  with Format 'dd/MM/YYYY'");
+        birthdate = ReadKeyBoard.readChain();
         person = new Person(firstName, lastName, address );
     }
 
     public void addTravel() throws ParseException {
-        Date dateStart = obj.parse("09/08/2021");
-        Date dateEnd = obj.parse("18/09/2021");
-        trip.setStartDate(dateStart);
-        trip.setEndDate(dateEnd);
+        //Date dateStart = obj.parse("09/08/2021");
+        //Date dateEnd = obj.parse("18/09/2021");
+        //trip.setStartDate(dateStart);
+        //trip.setEndDate(dateEnd);
         System.out.println("Data of Destination: " +"\n======================="+"\nPlease, Enter Country destination ");
         String destination = ReadKeyBoard.readChain();
         System.out.println("Please, enter City destination");
@@ -41,25 +40,41 @@ public class MenuTravelUML {
         System.out.println("Reason of Travel ");
         String reason = ReadKeyBoard.readChain();
 
+        System.out.println("Enter Start date with format 'dd/MM/yyyy'");
+        String startDate = ReadKeyBoard.readChain();
+        System.out.println("Enter End date with format 'dd/MM/yyyy'");
+        String endDate = ReadKeyBoard.readChain();
+        Date start = obj.parse(startDate);
+        Date end = obj.parse(endDate);
+
         trip.setDestinationCountry(destination);
         trip.setDestinationCity(destCity);
         trip.setReasonTrip(reason);
+        trip.setStartDate(start);
+        trip.setEndDate(end);
     }
+
     public void addHotel(){
         System.out.println("Data of the Hotel: " +"\n======================="+"\nPlease, Enter Hotel name ");
         String hotelname = ReadKeyBoard.readChain();
         System.out.println("Please, Enter Hotel Category ");
         int hotelcategori = ReadKeyBoard.readInt();
+        System.out.println("Please, Enter Hotel Email ");
+        String hotelEmail = ReadKeyBoard.readChain();
+        System.out.println("Please, Enter type room ");
+        String hotelroom= ReadKeyBoard.readChain();
         System.out.println("Please, Enter price ");
         hotelPrice = ReadKeyBoard.readFloat();
         hotelTrip.setName(hotelname);
         hotelTrip.setCategory(hotelcategori);
+        hotelTrip.setEmailHotel(hotelEmail);
+        hotelTrip.setRoom(hotelroom);
         hotelTrip.setPriceHotel(hotelPrice);
-        hotelTrip.getEmailHotel();
+
     }
 
     public void chooseTypePayment(){
-        System.out.println("Price of Travel  : " +"\n======================="+"\n");
+        //System.out.println("\n======================="+"\n");
         float price = trip.getTotalPrice(priceTicket, hotelPrice);
 
         System.out.println("\n=======================\n"+
@@ -78,7 +93,7 @@ public class MenuTravelUML {
             System.out.println("Please, Enter discount percentage  ");
             float desc = ReadKeyBoard.readFloat();
             tripPaymentCash.setPrice(price);
-            tripPaymentCash.setDesc(desc);
+            tripPaymentCash.setDiscountPorc(desc);
             tripPaymentCash.display();
         }
         else
@@ -107,7 +122,7 @@ public class MenuTravelUML {
     }
 
     public void getAgePerson(){
-        person.calculateAge(birthday);
+        person.calculateAge(birthdate);
     }
 
     public String displayPerson(){
