@@ -1,8 +1,8 @@
 import java.util.Date;
 
 public class Transport extends Trip{
-    String typeTransport;
-    float priceTicket;
+    private String typeTransport;
+    private float priceTicket;
     Date timeArrive;
     Date timeDeparture;
 

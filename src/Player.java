@@ -1,9 +1,9 @@
 public class Player extends Person{
-    double height;
-    int playerNumber;
-    String position;
-    double weight;
-    String athleticDiscipline;
+    private double height;
+    private int playerNumber;
+    private String position;
+    private double weight;
+    private String athleticDiscipline;
 
     public Player(){}
 

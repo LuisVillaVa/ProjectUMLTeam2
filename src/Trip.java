@@ -1,13 +1,12 @@
 import java.util.Date;
 
 public class Trip {
-
-    String destinationCountry;
-    String destinationCity;
-    Date startDate;
-    Date endDate;
-    String reasonTrip;
-    float totalPrice = 0;
+    private String destinationCountry;
+    private String destinationCity;
+    private Date startDate;
+    private Date endDate;
+    private String reasonTrip;
+    private float totalPrice = 0;
 
     public  Trip(){
 

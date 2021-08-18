@@ -1,5 +1,5 @@
 public class Cyclist extends Player{
-    boolean state;
+    private boolean state;
 
     public Cyclist(){}
 

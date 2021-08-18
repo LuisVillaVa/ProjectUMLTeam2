@@ -2,10 +2,12 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class MenuPlayerUML {
-    String discipline;
-    String nameTeam;
-    String nameCoach;
-    int option = 0;
+    private String nameTeam;
+    private String nameCoach;
+    private String firstName;
+    private String lastName;
+    private double height;
+    private double weight;
 
     Map<String,Team> teams = new HashMap<String,Team>();
     SimpleDateFormat obj = new SimpleDateFormat("dd/MM/yyyy");
@@ -27,11 +29,6 @@ public class MenuPlayerUML {
 
     private void addPlayer(ListPlayer player, String discipline) throws Exception{
         boolean morePlayer = true;
-        String firstName;
-        String lastName;
-        double height;
-        double weight;
-
         while(morePlayer){
             System.out.println("Enter first name: ");
             firstName = ReadKeyBoard.readChain();
@@ -55,6 +52,8 @@ public class MenuPlayerUML {
     }
 
     public void functionMenuPlayer(){
+        int option = 0;
+        String discipline;
         do {
             try {
                 option = this.menuInitialPlayer();
@@ -90,7 +89,7 @@ public class MenuPlayerUML {
                         break;
                     case 2:
                         discipline = "Basketball";
-                        addPlayer(player, discipline);
+                        this.addPlayer(player, discipline);
                         System.out.println(" *  BASKETBALL PLAYERS  *");
                         player.displayPlayer();
                         break;
@@ -98,7 +97,7 @@ public class MenuPlayerUML {
                         discipline = "Cyclist";
                         System.out.println("=============================");
                         System.out.println("Enter a Cyclist");
-                        addPlayer(player, discipline);
+                        this.addPlayer(player, discipline);
                         System.out.println("=============================");
                         System.out.println("Enter data of the bicycle");
                         System.out.println("Model of the bicycle: ");
@@ -118,7 +117,7 @@ public class MenuPlayerUML {
                         discipline = "Swimming";
                         System.out.println("=============================");
                         System.out.println("Enter a Swimmer");
-                        addPlayer(player, discipline);
+                        this.addPlayer(player, discipline);
                         System.out.println("=============================");
 
                         System.out.println("*  SWIMMER PLAYERS  *");
