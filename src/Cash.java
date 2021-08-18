@@ -1,8 +1,7 @@
 public class Cash extends  Payment {
-
-
-    float discountPorc;
-    float discount;
+    private float desc;
+    private float  descuento  ;
+    //float total;
 
     public Cash(float price) {
         super(price);

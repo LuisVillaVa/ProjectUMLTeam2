@@ -1,7 +1,7 @@
 public class Bike {
-    String model;
-    double price;
-    int hoopNumber;
+    private String model;
+    private double price;
+    private int hoopNumber;
 
     public Bike(){}
 

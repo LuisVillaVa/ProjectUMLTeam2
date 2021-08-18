@@ -1,20 +1,11 @@
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
-
 
 public class Main {
 
     public static void main(String[] arg) throws ParseException {
         MenuTravelUML menuTravel = new MenuTravelUML();
         MenuPlayerUML menuPlayer = new MenuPlayerUML();
-
-        String discipline;
-        String nameTeam;
-        String nameCoach;
-        Map<String,Team> teams = new HashMap<String,Team>();
-        SimpleDateFormat obj = new SimpleDateFormat("dd/MM/yyyy");
 
         System.out.println("\n==================================================\n"+
                             "1. Travel"+"\n"+

@@ -1,11 +1,12 @@
 public class Hotel {
+    private String name;
+    private int category;
+    private String emailHotel;
+    private String room;
+    private float priceHotel;
 
-    String name;
-    int category;
-    String emailHotel;
-    String room;
-    float priceHotel;
     public  Hotel(){}
+
     public Hotel(String name, int category, String emailHotel, String room, float priceHotel) {
         this.name = name;
         this.category = category;
@@ -60,6 +61,6 @@ public class Hotel {
                             "\nName Hotel  is: " + name +
                             "\nCategory is:  " + category + " Stars"+
                             "\nEmail is: "+ emailHotel +
-                            "\nType Room  is: "+ room);
+                            "\nPrice  is: "+ getPriceHotel());
     }
 }
