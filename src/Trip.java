@@ -8,9 +8,8 @@ public class Trip {
     private String reasonTrip;
     private float totalPrice = 0;
 
-    public  Trip(){
+    public Trip(){ }
 
-    }
     public Trip( String destinationCountry, String destinationCity, Date startDate, Date endDate, String reasonTrip ) {
 
         this.destinationCountry = destinationCountry;
@@ -39,9 +38,11 @@ public class Trip {
     public String getReasonTrip() {
         return reasonTrip;
     }
+
     public void setReasonTrip( String reasonTrip) {
         this.reasonTrip = reasonTrip;
     }
+
     public Date getStartDate() {
         return startDate;
     }
@@ -57,6 +58,7 @@ public class Trip {
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
+
     public float getTotalPrice(float priceTicket, float priceHotel) {
         return priceTicket+priceHotel;
     }
@@ -70,5 +72,7 @@ public class Trip {
                             "\nReason of Trip => " + reasonTrip );
 
 
+
     }
+
 }

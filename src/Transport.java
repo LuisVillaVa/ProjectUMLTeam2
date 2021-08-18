@@ -7,6 +7,7 @@ public class Transport extends Trip{
     Date timeDeparture;
 
     public Transport(){}
+
     public Transport(String destinationCountry, String destinationCity, Date startDate, Date endDate, String reasonTrip, String typeTransport, float priceTicket, Date timeArrive, Date timeDeparture) {
         super(destinationCountry, destinationCity, startDate, endDate, reasonTrip);
         this.typeTransport = typeTransport;

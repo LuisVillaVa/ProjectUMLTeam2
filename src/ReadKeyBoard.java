@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class ReadKeyBoard {
+
     public static char readCharacter() {
         char character;
         try {
@@ -12,6 +13,7 @@ public class ReadKeyBoard {
         }
         return character;
     }
+
     public static String readChain() {
         BufferedReader br =
                 new BufferedReader(new InputStreamReader(System.in));
@@ -24,6 +26,7 @@ public class ReadKeyBoard {
         }
         return str;
     }
+
     public static int readInt() {
         int num;
         try {
@@ -34,6 +37,7 @@ public class ReadKeyBoard {
         }
         return num;
     }
+
     public static double readDouble() {
         double val;
         try {
@@ -44,6 +48,7 @@ public class ReadKeyBoard {
         }
         return val;
     }
+
     public static boolean readBoolean() {
         boolean bol = true;
         try {
@@ -53,6 +58,7 @@ public class ReadKeyBoard {
         }
         return bol;
     }
+
     public static float readFloat() {
         float num = 0;
         try {

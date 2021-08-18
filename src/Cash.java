@@ -1,6 +1,6 @@
 public class Cash extends  Payment {
-    private float desc;
-    private float  descuento  ;
+    private float discountPorc;
+    private float  discount ;
     //float total;
 
     public Cash(float price) {
@@ -23,7 +23,7 @@ public class Cash extends  Payment {
     public void display() {
         System.out.println("*  CASH  *");
         System.out.println("The Price is: "+ price);
-        System.out.println("Discount is :"+ discount() + "$ =>" + discountPorc + "%");
+        System.out.println("Discount is :"+ discount() + "$ => " + discountPorc + "%");
         System.out.println("Cash total amount is: " +  (price - discount) + "  $ Dollar of discount  ");
     }
 
