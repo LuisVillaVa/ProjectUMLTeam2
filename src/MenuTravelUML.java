@@ -1,13 +1,11 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 public class MenuTravelUML {
-    String birthday;
-    float hotelPrice;
-    float priceTicket;
+    private String birthday;
+    private float hotelPrice;
+    private float priceTicket;
 
     SimpleDateFormat obj = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -32,8 +30,6 @@ public class MenuTravelUML {
     }
 
     public void addTravel() throws ParseException {
-
-
         Date dateStart = obj.parse("09/08/2021");
         Date dateEnd = obj.parse("18/09/2021");
         trip.setStartDate(dateStart);

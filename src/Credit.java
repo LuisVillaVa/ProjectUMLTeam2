@@ -1,5 +1,5 @@
 public class Credit extends Payment {
-    int quotas;
+    private int quotas;
 
     public Credit(float price, int quotas) {
         super(price);

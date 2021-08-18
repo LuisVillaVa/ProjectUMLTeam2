@@ -1,5 +1,5 @@
 public class Payment {
-   float price;
+    float price;
 
     public Payment(float price) {
         this.price = price;

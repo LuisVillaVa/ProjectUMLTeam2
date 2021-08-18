@@ -1,8 +1,8 @@
 public class Swim extends Player{
-    String style;
-    String lane;
-    String nameClub;
-    boolean startSwim;
+    private String style;
+    private String lane;
+    private String nameClub;
+    private boolean startSwim;
 
     public Swim(boolean startSwim){
         this.startSwim = startSwim;

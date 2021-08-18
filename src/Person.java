@@ -3,13 +3,13 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 public class Person {
-    String firstName;
-    String lastName;
-    String ci;
-    String birthDate;
-    int phone;
-    String address;
-    char gender;
+    private String firstName;
+    private String lastName;
+    private String ci;
+    private String birthDate;
+    private int phone;
+    private String address;
+    private char gender;
 
     public Person(){};
 

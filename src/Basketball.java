@@ -1,8 +1,8 @@
 public class Basketball extends Player{
-    String nameLeague;
-    int homeScore = 0, awayScore = 0, quarter = 1;
-    String homeTeam, awayTeam;
-    boolean gameStatus;
+    private String nameLeague;
+    private int homeScore = 0, awayScore = 0, quarter = 1;
+    private String homeTeam, awayTeam;
+    private boolean gameStatus;
 
     public Basketball(){};
 
