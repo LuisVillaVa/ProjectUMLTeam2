@@ -60,6 +60,6 @@ public class Hotel {
                             "\nName Hotel  is: " + name +
                             "\nCategory is:  " + category + " Stars"+
                             "\nEmail is: "+ emailHotel +
-                            "\nPreci  is: "+ getPriceHotel());
+                            "\nPrice  is: "+ getPriceHotel());
     }
 }
