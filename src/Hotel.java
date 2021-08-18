@@ -38,6 +38,7 @@ public class Hotel {
         this.emailHotel = emailHotel;
 
     }
+
     public String getRoom() {
         return room ;
     }
